@@ -1,20 +1,19 @@
 
-fun Double.redondear(posDecimal: Int) : Double{
 
+fun main() {
+
+    val empleado1 = EmpleadoFijo("Indalecio", "0004", 22456.6, 4)
+    val empleado2 = EmpleadoPorHora("Paula", "0002", 700.8, 6.00)
+    val empleado3 = EmpleadoFijo("Rodrigo", "0003", 30000.00, 8)
+
+
+    val ventas = Departamento()
+
+    ventas.agregarEmpleado(empleado1)
+    ventas.agregarEmpleado(empleado2)
+    ventas.agregarEmpleado(empleado3)
+
+
+    ventas.mostrarSalarios()
 }
 
-fun main(){
-
-    val ventas = Departamento("Ventas")
-
-    val empleado1 = EmpleadoFijo(2456.6, 4, "Indalecio","0004")
-    val empleado2 = EmpleadoPorHora(1200.8, 6.00, "Paula","0002")
-    val empleado3 = EmpleadoFijo(30000.00, 8, "Rodrigo","0003")
-
-    ventas.agreagarEmpleado(empleado1)
-    ventas.agreagarEmpleado(empleado2)
-    ventas.agreagarEmpleado(empleado3)
-
-    ventas.mostrarEmpleados()
-
-}

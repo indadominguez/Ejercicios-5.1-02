@@ -1,26 +1,22 @@
-class Departamento(nombre: String) {
 
-    var listaEmpleado = mutableListOf<Empleado>()
+class Departamento {
+    private val listaEmpleados = mutableListOf<Empleado>()
 
-    constructor(nombre: String, listaEmpleado: MutableList<Empleado>): this(nombre) {
-
-        this.listaEmpleado = listaEmpleado
+    fun agregarEmpleado(empleado: Empleado) {
+        listaEmpleados.add(empleado)
     }
 
-    fun agreagarEmpleado(empleado: EmpleadoPorHora){
-        listaEmpleado.add(empleado)
-    }
-
-
-    fun calculaSalarioTotal(): Double{
+    fun calculaSalarioTotal(): Double {
         var salarioTotal = 0.0
-
-        for(empleado in listaEmpleado){
-
+        for (empleado in listaEmpleados) {
             salarioTotal += empleado.calcularSalario()
         }
-
         return salarioTotal
     }
 
+    fun mostrarSalarios() {
+        listaEmpleados.forEach {
+            println("${it.toString()} tiene un salario de %.2f al mes.".format(it.calcularSalario()))
+        }
+    }
 }
